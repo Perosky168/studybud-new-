@@ -5,7 +5,8 @@ from .forms import RoomForm
 
 def home(request):
     rooms = Room.objects.all()
-    context = {'rooms': rooms}
+    topic = Topic.Room.objects.all()
+    context = {'rooms': rooms, 'topic': topic}
     return render(request, 'base/home.html', context)
 
 
